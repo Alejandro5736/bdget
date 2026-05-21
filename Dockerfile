@@ -1,10 +1,10 @@
-# Paso 1: Compilación con Maven y OpenJDK 21
+# Paso 1: Compilación con Maven y Java 21 (Temurin)
 FROM maven:3.9.6-eclipse-temurin-21 AS build
 COPY . .
 RUN mvn clean package -DskipTests
 
-# Paso 2: Imagen ligera de ejecución con Java 21 y Wallet incluida
-FROM openjdk:21-jdk-slim
+# Paso 2: Imagen ligera de ejecución con Java 21 (Temurin) y Wallet incluida
+FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
 
 # Copiar el empaquetado JAR desde la etapa build
