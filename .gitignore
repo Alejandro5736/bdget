@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### ORACLE WALLET CREDENTIALS ###
+!src/main/resources/wallet/
